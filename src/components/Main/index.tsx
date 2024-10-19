@@ -1,10 +1,5 @@
-import { DashboardLayout } from '@toolpad/core'
-import * as S from './styles'
-
 const Main = () => (
-  <S.Wrapper>
-    <DashboardLayout>Segment</DashboardLayout>
-  </S.Wrapper>
+  <div className="bg-primary">fwe sfsd ff sfds f sd fd fsdfsdfs d poppins</div>
 )
 
 export default Main
