@@ -1,11 +1,13 @@
 'use client'
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/AppSideBar'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 export function Providers({ children }: PropsWithChildren) {
+  const [open, setOpen] = useState(false)
+
   return (
-    <SidebarProvider>
+    <SidebarProvider open={open} onOpenChange={setOpen}>
       <AppSidebar />
       <main>
         <SidebarTrigger />

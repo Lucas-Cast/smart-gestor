@@ -1,5 +1,7 @@
 const Main = () => (
-  <div className="bg-primary">fwe sfsd ff sfds f sd fd fsdfsdfs d poppins</div>
+  <div className="text-foreground">
+    fwe sfsd ff sfds f sd aaaaaaafd fsdfsdfs d poppins
+  </div>
 )
 
 export default Main
