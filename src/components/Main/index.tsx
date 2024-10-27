@@ -1,7 +1,3 @@
-const Main = () => (
-  <div className="text-foreground">
-    fwe sfsd ff sfds f sd aaaaaaafd fsdfsdfs d poppins
-  </div>
-)
+const Main = () => <div className="text-foreground">Home page</div>
 
 export default Main
