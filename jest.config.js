@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['/node_modules/', '/.next/','<rootDir>/src/hooks/use-mobile.tsx','<rootDir>/src/components/ui/'],
+  testPathIgnorePatterns: ['/node_modules/', '/.next/','<rootDir>/src/hooks/use-mobile.tsx','<rootDir>/src/components/ui/*.tsx'],
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.ts(x)?',
@@ -8,7 +8,10 @@ module.exports = {
     '!src/lib/registry.tsx',
     '!src/types/**',
     '!src/**/stories.tsx',
-    '!src/styles/**'
+    '!src/styles/**',
+    '!src/components/ui/*.tsx',
+    '!src/hooks/use-mobile.tsx',
+    '!src/lib/*.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],
@@ -19,15 +22,12 @@ module.exports = {
       presets: [
         '@babel/preset-env',
         // or runtime: 'classic', depending on which one you are using
-        ['@babel/preset-react', { development: true, runtime: 'automatic' }]
+        ['@babel/preset-react', { development: true, runtime: 'automatic' }],
+        '@babel/preset-typescript'
       ]
     }]
   },
-  // https://github.com/styled-components/styled-components/issues/4081
-  // v6 of styled-components doesn't inject styles in test environment
-  // we should to force it to use the browser version
   moduleNameMapper: {
-    '^styled-components':
-      'styled-components/dist/styled-components.browser.cjs.js'
-  }
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 }
