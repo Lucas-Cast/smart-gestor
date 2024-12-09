@@ -1,3 +1,3 @@
-const Main = () => <div className="text-foreground">Home page</div>
+const Main = () => <div>Home page</div>
 
 export default Main
