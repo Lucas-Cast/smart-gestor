@@ -26,7 +26,7 @@ const sidebarLinks = [
 export function AppSidebar() {
   return (
     <>
-      <Sidebar collapsible="icon" className="text-sidebar-foreground">
+      <Sidebar className="text-sidebar-foreground">
         <SidebarHeader>
           <SidebarTrigger />
         </SidebarHeader>
