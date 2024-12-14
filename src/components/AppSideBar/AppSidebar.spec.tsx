@@ -22,6 +22,11 @@ jest.mock('@/components/ui/sidebar', () => ({
     <button data-testid="sidebar-menu-button" {...props}>
       {children}
     </button>
+  )),
+  SidebarTrigger: jest.fn(({ children, ...props }) => (
+    <button data-testid="sidebar-trigger" {...props}>
+      {children}
+    </button>
   ))
 }))
 

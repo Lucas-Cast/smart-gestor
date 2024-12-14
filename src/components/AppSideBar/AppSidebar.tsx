@@ -4,7 +4,8 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
-  SidebarMenuButton
+  SidebarMenuButton,
+  SidebarTrigger
 } from '@/components/ui/sidebar'
 
 const sidebarLinks = [
@@ -24,18 +25,22 @@ const sidebarLinks = [
 
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarHeader />
-      <SidebarContent>
-        <SidebarGroup>
-          {sidebarLinks.map((item, index) => (
-            <SidebarMenuButton key={index} asChild>
-              <a href={item.url}>{item.name}</a>
-            </SidebarMenuButton>
-          ))}
-        </SidebarGroup>
-      </SidebarContent>
-      <SidebarFooter />
-    </Sidebar>
+    <>
+      <Sidebar className="text-sidebar-foreground">
+        <SidebarHeader>
+          <SidebarTrigger />
+        </SidebarHeader>
+        <SidebarContent>
+          <SidebarGroup>
+            {sidebarLinks.map((item, index) => (
+              <SidebarMenuButton key={index} asChild>
+                <a href={item.url}>{item.name}</a>
+              </SidebarMenuButton>
+            ))}
+          </SidebarGroup>
+        </SidebarContent>
+        <SidebarFooter />
+      </Sidebar>
+    </>
   )
 }
